@@ -1,123 +1,459 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
+  <title>Meakin and Sons | Resin Specialists</title>
+  <meta name="description" content="Meakin and Sons — professional resin services. Contact us today for enquiries and quotations.">
 
-[Link to another page](./another-page.html).
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --panel: #111;
+      --text: #e8e8e8;
+      --muted: #8b8b8b;
+      --green: #00ff66;
+      --gold: #d4af37;
+      --border: #292929;
+    }
 
-There should be whitespace between paragraphs.
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+    html {
+      scroll-behavior: smooth;
+    }
 
-# Header 1
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Courier New", Courier, monospace;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(0,255,102,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,102,.025) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: -2;
+    }
 
-## Header 2
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(
+        circle at center,
+        transparent 0%,
+        rgba(0,0,0,.35) 70%,
+        rgba(0,0,0,.8) 100%
+      );
+      z-index: -1;
+    }
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+    a {
+      color: var(--green);
+      text-decoration: none;
+    }
 
-### Header 3
+    a:hover {
+      color: white;
+      text-shadow: 0 0 12px var(--green);
+    }
 
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
+    .container {
+      width: min(1050px, 92%);
+      margin: auto;
+    }
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
+    header {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
 
-#### Header 4
+    .terminal {
+      width: 100%;
+      padding: 45px 0;
+    }
 
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
+    .terminal-line {
+      color: var(--green);
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
 
-##### Header 5
+    .terminal-line::before {
+      content: "> ";
+      color: var(--gold);
+    }
 
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
+    .brand {
+      font-size: clamp(42px, 8vw, 88px);
+      line-height: 1;
+      letter-spacing: -4px;
+      color: white;
+      margin: 20px 0;
+      text-shadow:
+        0 0 10px rgba(255,255,255,.15),
+        0 0 35px rgba(212,175,55,.15);
+    }
 
-###### Header 6
+    .brand span {
+      color: var(--gold);
+    }
 
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
+    .tagline {
+      max-width: 720px;
+      color: #aaa;
+      font-size: clamp(16px, 2vw, 21px);
+      margin-bottom: 35px;
+    }
 
-### There's a horizontal rule below this.
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 20px;
+      background: var(--green);
+      margin-left: 5px;
+      vertical-align: middle;
+      animation: blink 1s infinite;
+    }
 
-* * *
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
 
-### Here is an unordered list:
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
 
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border: 1px solid var(--green);
+      color: var(--green);
+      background: rgba(0,255,102,.03);
+      transition: .25s ease;
+      font-weight: bold;
+    }
 
-### And an ordered list:
+    .button:hover {
+      background: var(--green);
+      color: #000;
+      box-shadow: 0 0 25px rgba(0,255,102,.35);
+      text-shadow: none;
+      transform: translateY(-2px);
+    }
 
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
+    .button.gold {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
 
-### And a nested list:
+    .button.gold:hover {
+      background: var(--gold);
+      color: #000;
+      box-shadow: 0 0 25px rgba(212,175,55,.35);
+    }
 
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
+    section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--border);
+    }
 
-### Small image
+    .section-title {
+      color: var(--green);
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
 
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
+    .section-title::before {
+      content: "## ";
+      color: var(--gold);
+    }
 
-### Large image
+    .section-text {
+      max-width: 800px;
+      color: #aaa;
+      font-size: 16px;
+    }
 
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #121212, #0c0c0c);
+      border: 1px solid var(--border);
+      padding: 30px;
+      transition: .25s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      border-color: var(--gold);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 40px rgba(0,0,0,.4);
+    }
+
+    .card h3 {
+      color: var(--gold);
+      margin-bottom: 15px;
+      font-size: 19px;
+    }
+
+    .card h3::before {
+      content: "[";
+      color: var(--green);
+    }
+
+    .card h3::after {
+      content: "]";
+      color: var(--green);
+    }
+
+    .card p {
+      color: #888;
+      font-size: 14px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact .section-text {
+      margin: 0 auto 35px;
+    }
+
+    .contact-box {
+      border: 1px solid var(--gold);
+      padding: 40px 25px;
+      background: rgba(212,175,55,.025);
+      box-shadow: inset 0 0 40px rgba(212,175,55,.025);
+    }
+
+    .contact-box h3 {
+      color: white;
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: #888;
+      margin-bottom: 25px;
+    }
+
+    footer {
+      padding: 35px 0;
+      color: #555;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    footer span {
+      color: var(--green);
+    }
+
+    @media (max-width: 750px) {
+      header {
+        min-height: 85vh;
+      }
+
+      .brand {
+        letter-spacing: -2px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container terminal">
+
+      <div class="terminal-line">initialising_meakin_and_sons</div>
+
+      <h1 class="brand">
+        MEAKIN <span>&amp;</span> SONS
+      </h1>
+
+      <p class="tagline">
+        Professional resin solutions. Quality workmanship.
+        Built to last.<span class="cursor"></span>
+      </p>
+
+      <div class="buttons">
+        <a href="#contact" class="button gold">
+          CONTACT US
+        </a>
+
+        <a href="#about" class="button">
+          DISCOVER MORE
+        </a>
+      </div>
+
+    </div>
+  </header>
 
 
-### Definition lists can be used with HTML syntax.
+  <section id="about">
+    <div class="container">
 
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
+      <h2 class="section-title">about_meakin_and_sons</h2>
 
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
+      <p class="section-text">
+        Welcome to Meakin and Sons.
+        <br><br>
+        We provide professional resin services with a focus on
+        quality, reliability and attention to detail.
+        <br><br>
+        Looking for resin work or want to discuss a project?
+        Get in touch with us today.
+      </p>
 
-```
-The final element.
-```
+    </div>
+  </section>
+
+
+  <section>
+    <div class="container">
+
+      <h2 class="section-title">why_choose_us</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>QUALITY</h3>
+          <p>
+            Professional workmanship with attention to the details
+            that matter.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>RELIABLE</h3>
+          <p>
+            Straightforward communication and a dependable service
+            from start to finish.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>EXPERIENCE</h3>
+          <p>
+            A practical, professional approach to every project.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="contact" class="contact">
+    <div class="container">
+
+      <h2 class="section-title">contact_meakin_and_sons</h2>
+
+      <div class="contact-box">
+
+        <h3>READY TO DISCUSS A PROJECT?</h3>
+
+        <p>
+          Contact us directly and let's talk about what you need.
+        </p>
+
+        <div class="buttons" style="justify-content:center;">
+
+          <!-- Replace the number below with your dad's real number -->
+          <a
+            href="tel:07123456789"
+            class="button gold"
+          >
+            CALL US
+          </a>
+
+          <!-- Replace the email below with your dad's real email -->
+          <a
+            href="mailto:contact@meakinandsons.co.uk"
+            class="button"
+          >
+            EMAIL US
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="container">
+      <span>MEAKIN_AND_SONS</span> //
+      © 2026 All rights reserved.
+    </div>
+  </footer>
+
+
+  <script>
+    // Hacker-style terminal typing effect
+    const terminal = document.querySelector(".terminal-line");
+
+    const messages = [
+      "initialising_meakin_and_sons",
+      "loading_resin_services",
+      "system_ready"
+    ];
+
+    let messageIndex = 0;
+
+    setInterval(() => {
+      messageIndex = (messageIndex + 1) % messages.length;
+
+      terminal.style.opacity = "0";
+
+      setTimeout(() => {
+        terminal.textContent = messages[messageIndex];
+        terminal.style.opacity = "1";
+      }, 250);
+
+    }, 3500);
+  </script>
+
+</body>
+</html>
