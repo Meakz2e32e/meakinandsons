@@ -425,7 +425,7 @@
 
   <footer>
     <div class="container">
-      <span>MEAKIN_AND_SONS</span> //
+      <span>MEAKINANDSONS</span> /
       © 2026 All rights reserved.
     </div>
   </footer>
