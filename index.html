@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Meakin and Sons | Flooring Specialists</title>
-  <meta name="description" content="Meakin and Sons — professional Flooring Services. Contact us today for enquiries and quotations.">
+  <meta
+    name="description"
+    content="Meakin and Sons — professional flooring services. Contact us today for enquiries and quotations."
+  >
 
   <style>
     :root {
@@ -77,6 +80,8 @@
       margin: auto;
     }
 
+    /* HEADER */
+
     header {
       min-height: 92vh;
       display: flex;
@@ -93,6 +98,7 @@
       color: var(--green);
       margin-bottom: 12px;
       font-size: 15px;
+      transition: opacity 0.25s ease;
     }
 
     .terminal-line::before {
@@ -138,6 +144,8 @@
       }
     }
 
+    /* BUTTONS */
+
     .buttons {
       display: flex;
       flex-wrap: wrap;
@@ -173,6 +181,8 @@
       box-shadow: 0 0 25px rgba(212,175,55,.35);
     }
 
+    /* SECTIONS */
+
     section {
       padding: 90px 0;
       border-bottom: 1px solid var(--border);
@@ -187,6 +197,7 @@
     .section-title::before {
       content: "|";
       color: var(--gold);
+      margin-right: 5px;
     }
 
     .section-text {
@@ -194,6 +205,8 @@
       color: #aaa;
       font-size: 16px;
     }
+
+    /* CARDS */
 
     .cards {
       display: grid;
@@ -236,6 +249,8 @@
       font-size: 14px;
     }
 
+    /* CONTACT */
+
     .contact {
       text-align: center;
     }
@@ -244,47 +259,47 @@
       margin: 0 auto 35px;
     }
 
-/* CONTACT BOX */
+    .contact-box {
+      max-width: 600px;
+      margin: 0 auto;
+      border: 1px solid var(--gold);
+      padding: 35px 30px;
+      background: rgba(212,175,55,.025);
+      box-shadow: inset 0 0 40px rgba(212,175,55,.025);
+      text-align: center;
+    }
 
-.contact-box {
-  max-width: 600px;
-  margin: 0 auto;
-  border: 1px solid var(--gold);
-  padding: 35px 30px;
-  background: rgba(212,175,55,.025);
-  box-shadow: inset 0 0 40px rgba(212,175,55,.025);
-  text-align: center;
-}
+    .contact-box h3 {
+      color: white;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
 
-.contact-box h3 {
-  color: white;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
+    .contact-box > p {
+      color: #888;
+      margin-bottom: 25px;
+    }
 
-.contact-box > p {
-  color: #888;
-  margin-bottom: 25px;
-}
+    .contact-details p {
+      margin: 12px 0;
+      color: #aaa;
+    }
 
-.contact-details p {
-  margin: 12px 0;
-  color: #aaa;
-}
+    .contact-details strong {
+      color: var(--gold);
+      margin-right: 8px;
+    }
 
-.contact-details strong {
-  color: var(--gold);
-  margin-right: 8px;
-}
+    .contact-details a {
+      color: var(--green);
+    }
 
-.contact-details a {
-  color: var(--green);
-}
+    .contact-details a:hover {
+      color: white;
+      text-shadow: 0 0 12px var(--green);
+    }
 
-.contact-details a:hover {
-  color: white;
-  text-shadow: 0 0 12px var(--green);
-}
+    /* FOOTER */
 
     footer {
       padding: 35px 0;
@@ -297,7 +312,10 @@
       color: var(--green);
     }
 
+    /* MOBILE */
+
     @media (max-width: 750px) {
+
       header {
         min-height: 85vh;
       }
@@ -318,16 +336,28 @@
         width: 100%;
         text-align: center;
       }
+
+      .contact-box {
+        padding: 30px 20px;
+      }
+
+      .contact-box h3 {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- HEADER -->
+
   <header>
     <div class="container terminal">
 
-      <div class="terminal-line">initialising_meakin_and_sons</div>
+      <div class="terminal-line" id="terminal-message">
+        initialising_meakin_and_sons
+      </div>
 
       <h1 class="brand">
         MEAKIN <span>&amp;</span> SONS
@@ -339,6 +369,7 @@
       </p>
 
       <div class="buttons">
+
         <a href="#contact" class="button gold">
           CONTACT US
         </a>
@@ -346,23 +377,30 @@
         <a href="#about" class="button">
           DISCOVER MORE
         </a>
+
       </div>
 
     </div>
   </header>
 
 
+  <!-- ABOUT -->
+
   <section id="about">
     <div class="container">
 
-      <h2 class="section-title">About Us</h2>
+      <h2 class="section-title">
+        About Us
+      </h2>
 
       <p class="section-text">
         Welcome to Meakin and Sons.
         <br><br>
+
         We provide professional resin services with a focus on
         quality, reliability and attention to detail.
         <br><br>
+
         Looking for resin work or want to discuss a project?
         Get in touch with us today.
       </p>
@@ -371,102 +409,119 @@
   </section>
 
 
-<section>
-  <div class="container">
+  <!-- WHY CHOOSE US -->
 
-    <h2 class="section-title">Why Choose Us?</h2>
+  <section>
+    <div class="container">
 
-    <div class="cards">
+      <h2 class="section-title">
+        Why Choose Us?
+      </h2>
 
-      <div class="card">
-        <h3>QUALITY</h3>
-        <p>
-          Quality flooring, carefully fitted to deliver a professional
-          finish that lasts.
-        </p>
+      <div class="cards">
+
+        <div class="card">
+
+          <h3>QUALITY</h3>
+
+          <p>
+            Quality flooring, carefully fitted to deliver a professional
+            finish that lasts.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <h3>RELIABLE</h3>
+
+          <p>
+            A dependable service with clear communication and attention
+            to detail from start to finish.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <h3>EXPERIENCE</h3>
+
+          <p>
+            Experienced flooring professionals with the knowledge to
+            help you choose the right flooring for your space.
+          </p>
+
+        </div>
+
       </div>
-
-      <div class="card">
-        <h3>RELIABLE</h3>
-        <p>
-          A dependable service with clear communication and attention
-          to detail from start to finish.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>EXPERIENCE</h3>
-        <p>
-          Experienced flooring professionals with the knowledge to
-          help you choose the right flooring for your space.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<div class="contact-box">
-
-  <h3>GOT ANY QUESTIONS OR PROJECTS?</h3>
-
-  <div class="contact-box">
-
-  <h3>GOT ANY QUESTIONS OR PROJECTS?</h3>
-
-  <p>
-    Contact us directly and let's talk about what you need.
-  </p>
-
-  <div class="contact-details">
-
-    <p>
-      <strong>PHONE:</strong>
-      <a href="tel:07123456789">07123 456789</a>
-    </p>
-
-    <p>
-      <strong>EMAIL:</strong>
-      <a href="mailto:contact@meakinandsons.co.uk">
-        contact@meakinandsons.co.uk
-      </a>
-    </p>
-
-  </div>
-
-</div>
-
-  <div class="buttons" style="justify-content:center;">
-
-    <a href="tel:07123456789" class="button gold">
-      CALL
-    </a>
-
-    <a href="mailto:contact@meakinandsons.co.uk" class="button">
-      EMAIL US
-    </a>
-
-  </div>
-
-</div>
 
     </div>
   </section>
 
 
-  <footer>
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
+
     <div class="container">
-      <span>MEAKINANDSONS</span> /
-      © 2026 All rights reserved.
+
+      <div class="contact-box">
+
+        <h3>
+          GOT ANY QUESTIONS OR PROJECTS?
+        </h3>
+
+        <p>
+          Contact us directly and let's talk about what you need.
+        </p>
+
+        <div class="contact-details">
+
+          <p>
+            <strong>PHONE:</strong>
+            <a href="tel:07123456789">
+              07123 456789
+            </a>
+          </p>
+
+          <p>
+            <strong>EMAIL:</strong>
+            <a href="mailto:contact@meakinandsons.co.uk">
+              contact@meakinandsons.co.uk
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <span>MEAKINANDSONS</span>
+      /
+      © 2026 All rights reserved.
+
+    </div>
+
   </footer>
 
 
+  <!-- JAVASCRIPT -->
+
   <script>
-    // Hacker-style terminal typing effect
-    const terminal = document.querySelector(".terminal-line");
+
+    const terminal = document.getElementById("terminal-message");
 
     const messages = [
       "Welcome to Meakin & Sons",
@@ -477,16 +532,23 @@
     let messageIndex = 0;
 
     setInterval(() => {
-      messageIndex = (messageIndex + 1) % messages.length;
+
+      messageIndex =
+        (messageIndex + 1) % messages.length;
 
       terminal.style.opacity = "0";
 
       setTimeout(() => {
-        terminal.textContent = messages[messageIndex];
+
+        terminal.textContent =
+          messages[messageIndex];
+
         terminal.style.opacity = "1";
+
       }, 250);
 
     }, 3500);
+
   </script>
 
 </body>
