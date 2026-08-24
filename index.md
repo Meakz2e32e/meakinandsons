@@ -347,40 +347,41 @@
   </section>
 
 
-  <section>
-    <div class="container">
+<section>
+  <div class="container">
 
-      <h2 class="section-title">why_choose_us</h2>
+    <h2 class="section-title">Why Choose Us?</h2>
 
-      <div class="cards">
+    <div class="cards">
 
-        <div class="card">
-          <h3>QUALITY</h3>
-          <p>
-            Professional workmanship with attention to the details
-            that matter.
-          </p>
-        </div>
+      <div class="card">
+        <h3>QUALITY</h3>
+        <p>
+          Quality flooring, carefully fitted to deliver a professional
+          finish that lasts.
+        </p>
+      </div>
 
-        <div class="card">
-          <h3>RELIABLE</h3>
-          <p>
-            Straightforward communication and a dependable service
-            from start to finish.
-          </p>
-        </div>
+      <div class="card">
+        <h3>RELIABLE</h3>
+        <p>
+          A dependable service with clear communication and attention
+          to detail from start to finish.
+        </p>
+      </div>
 
-        <div class="card">
-          <h3>EXPERIENCE</h3>
-          <p>
-            A practical, professional approach to every project.
-          </p>
-        </div>
-
+      <div class="card">
+        <h3>EXPERIENCE</h3>
+        <p>
+          Experienced flooring professionals with the knowledge to
+          help you choose the right flooring for your space.
+        </p>
       </div>
 
     </div>
-  </section>
+
+  </div>
+</section>
 
 
   <section id="contact" class="contact">
