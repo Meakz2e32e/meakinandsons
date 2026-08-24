@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Meakin and Sons | Resin Specialists</title>
+  <title>Meakin and Sons | Flooring Specialists</title>
   <meta name="description" content="Meakin and Sons — professional resin services. Contact us today for enquiries and quotations.">
 
   <style>
     :root {
       --bg: #0b0b0b;
       --panel: #111;
-      --text: #e8e8e8;
+      --text: #00ff66;
       --muted: #8b8b8b;
       --green: #00ff66;
       --gold: #d4af37;
@@ -331,7 +331,7 @@
   <section id="about">
     <div class="container">
 
-      <h2 class="section-title">about_meakin_and_sons</h2>
+      <h2 class="section-title">About Us</h2>
 
       <p class="section-text">
         Welcome to Meakin and Sons.
@@ -386,11 +386,11 @@
   <section id="contact" class="contact">
     <div class="container">
 
-      <h2 class="section-title">contact_meakin_and_sons</h2>
+      <h2 class="section-title">contact meakin and sons below!</h2>
 
       <div class="contact-box">
 
-        <h3>READY TO DISCUSS A PROJECT?</h3>
+        <h3>GOT ANY QUESTIONS OR PROJECTS?</h3>
 
         <p>
           Contact us directly and let's talk about what you need.
@@ -398,7 +398,7 @@
 
         <div class="buttons" style="justify-content:center;">
 
-          <!-- Replace the number below with your dad's real number -->
+          <!-- Replace the number below TO BUSINESS OWNERS-->
           <a
             href="tel:07123456789"
             class="button gold"
@@ -406,7 +406,7 @@
             CALL US
           </a>
 
-          <!-- Replace the email below with your dad's real email -->
+          <!-- Replace the email below TO BUSINESS OWNERS -->
           <a
             href="mailto:contact@meakinandsons.co.uk"
             class="button"
