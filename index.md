@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Meakin and Sons | Flooring Specialists</title>
-  <meta name="description" content="Meakin and Sons — professional resin services. Contact us today for enquiries and quotations.">
+  <meta name="description" content="Meakin and Sons — professional Flooring Services. Contact us today for enquiries and quotations.">
 
   <style>
     :root {
@@ -185,7 +185,7 @@
     }
 
     .section-title::before {
-      content: "## ";
+      content: "|";
       color: var(--gold);
     }
 
